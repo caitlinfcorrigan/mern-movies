@@ -4,7 +4,7 @@ export default function LoginPage(){
     const [username, setUsername] = useState("");
 
     function handleUsername(e) {
-        const newUsername = { ...username, e.target.value}
+        const newUsername = { ...username, 'e.target.value'}
         setUsername(newUsername);
     }
 
@@ -12,7 +12,7 @@ export default function LoginPage(){
         e.preventDefault();
         addUser(username);
     }
-    
+
     return(
         <form>
             <label>Username</label>
@@ -20,7 +20,7 @@ export default function LoginPage(){
                 type="text"
                 name="user"
                 value={username}
-                onChange={={handleUsername}}
+                onChange={handleUsername}
             />
             <button type="submit">Login</button>
         </form>

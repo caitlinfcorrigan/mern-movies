@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import MovieDetailPage from ('../MovieDetail/MovieDetailPage');
-import MoviesListPage from ('../MoviesList/MoviesListPage');
-import ActorListPage from ('../ActorList/ActorListPage');
-import LoginPage from ('../Login/LoginPage');
+import MovieDetailPage from '../MovieDetail/MovieDetailPage';
+import MoviesListPage from '../MoviesList/MoviesListPage';
+import ActorListPage from '../ActorList/ActorListPage';
+import LoginPage from '../Login/LoginPage';
 
 function App() {
   const [user, setUser] = useState();
@@ -18,12 +17,15 @@ function App() {
     <main className="App">
       { user ?
         <Routes>
-          <Route path="/movies" element={<MoviesListPage />} />
-          <Route path="/movies/detail" element={<MovieDetailPage />} />
+          <NavBar/>
+          <Route path="/" element={<MoviesListPage />} />
+          <Route path="/movies/:movieName" element={<MovieDetailPage />} />
           <Route path="/actors" element={<ActorListPage />} />
         </Routes>
         :
-        <LoginPage/>
+        <Routes>
+        <Route path="/" element={<LoginPage />} />
+      </Routes>
       }
     </main>
   );

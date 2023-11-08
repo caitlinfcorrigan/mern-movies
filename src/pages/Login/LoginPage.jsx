@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function LoginPage(){
-    const [username, setUsername] = useState("");
+export default function LoginPage({ addUser }){
+    const [username, setUsername] = useState({username:""});
 
     function handleUsername(e) {
-        const newUsername = { ...username, 'e.target.value'}
+        const newUsername = { ...username, [e.target.name]:e.target.value}
         setUsername(newUsername);
     }
 
@@ -14,12 +14,12 @@ export default function LoginPage(){
     }
 
     return(
-        <form>
+        <form onSumbit={handleLogin}>
             <label>Username</label>
             <input
                 type="text"
                 name="user"
-                value={username}
+                value={username.name}
                 onChange={handleUsername}
             />
             <button type="submit">Login</button>

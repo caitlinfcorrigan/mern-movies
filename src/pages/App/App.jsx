@@ -6,9 +6,10 @@ import MoviesListPage from '../MoviesList/MoviesListPage';
 import ActorListPage from '../ActorList/ActorListPage';
 import LoginPage from '../Login/LoginPage';
 import NavBar from '../../components/NavBar';
+import { movies } from "../../data.js";
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState("nonull");
 
   function addUser(username) {
     setUser([...user, username]);
@@ -20,8 +21,8 @@ function App() {
         <>
           <NavBar/>
           <Routes>
-            <Route path="/" element={<MoviesListPage />} />
-            <Route path="/movies/:movieName" element={<MovieDetailPage />} />
+            <Route path="/" element={<MoviesListPage movies={ movies }/>} />
+            <Route path="/movies/:movieName" element={<MovieDetailPage movies={ movies } />} />
             <Route path="/actors" element={<ActorListPage />} />
           </Routes>
         </>

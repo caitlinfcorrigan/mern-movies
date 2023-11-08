@@ -9,6 +9,11 @@ import LoginPage from ('../Login/LoginPage');
 
 function App() {
   const [user, setUser] = useState();
+
+  function addUser(username) {
+    setUser([...user, username]);
+  }
+
   return (
     <main className="App">
       { user ?

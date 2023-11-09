@@ -1,12 +1,14 @@
 import './MovieCard.css';
+import { link } from 'react-router-dom';
+
 export default function MovieCard({ movie }) {
     const date = new Date(movie.releaseDate)
     return(
         <div class="container">
 
-            <a href={'/movies/' + movie.title} >
+            <Link to={'/movies/' + movie.title} >
                 <img src={movie.posterPath}/>
-            </a>
+            </Link>
             <div class="centered">{ movie.title }
             <br></br>
             {date.toLocaleString('default', { month: 'long', day: 'numeric', year:'numeric' })}</div>

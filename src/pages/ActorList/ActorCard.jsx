@@ -1,5 +1,5 @@
-export default function ActorCard({ actors }){
-    return(
-        <li>{ actors }</li>
+export default function ActorCard({actor}) {
+    return (
+            <li>{actor}</li>
     )
 }

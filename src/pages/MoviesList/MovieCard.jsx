@@ -5,7 +5,6 @@ export default function MovieCard({ movie }) {
     const date = new Date(movie.releaseDate)
     return(
         <div class="container">
-
             <Link to={'/movies/' + movie.title} >
                 <img src={movie.posterPath}/>
             </Link>

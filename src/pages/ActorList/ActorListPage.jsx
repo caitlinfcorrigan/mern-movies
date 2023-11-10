@@ -1,15 +1,22 @@
-import ActorCard from "./ActorCard";
+import ActorCard from './ActorCard';
 
 export default function ActorListPage({ movies }){
-    const allActors = movies.map((m) => {
-        m.cast.map(a => a)
-    } )
-    const actors = [...new Set(allActors.map(a => a ))]
+    // Array of casts from all movies (flattened)
+    const allActors = movies.flatMap(m => m.cast);
+
+    // Array of unique actors (from Set)
+    const uniqueActors = Array.from([...new Set(allActors.map((a) => a))]);
+
+    // Map the actors into the ActorCard component
+    const actor = uniqueActors.map(a => 
+        (<ActorCard actor={a} />)
+    )
+
     return(
         <div>
             <h1>ActorListPage</h1>
             <ul>
-                <ActorCard actors={ actors }/>
+                { actor }
             </ul>
         </div>
     )

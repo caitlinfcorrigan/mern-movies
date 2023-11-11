@@ -1,6 +1,12 @@
 import { useParams } from 'react-router';
 
 export default function ActorDetailPage({ movies }) {
-    // const actor = useParams();
-    return <h1>Detail</h1>
+    const actor = useParams();
+    const actorDetails = movies.filter(function (m) {
+        return 
+    }
+    console.log(actorDetails)
+    return (
+        <h1>Actor Details</h1>
+    )
 }

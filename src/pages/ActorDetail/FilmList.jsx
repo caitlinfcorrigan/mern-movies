@@ -1,5 +1,6 @@
-export default function FilmList({actorMovies}) {
+export default function FilmList({movie}) {
+    console.log(movie)
     return (
-        <li>{ actorMovies }</li>
+        <li>{ movie }</li>
     )
 }

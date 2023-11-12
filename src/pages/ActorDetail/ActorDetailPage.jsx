@@ -15,7 +15,7 @@ export default function ActorDetailPage({ movies }) {
         <div>
             <h1>{actor.actor} Details</h1>
             <ul>
-                <FilmList actorMovies= { actorMovies } />
+                <FilmList movie= { actorMovies } />
             </ul>
         </div>
 

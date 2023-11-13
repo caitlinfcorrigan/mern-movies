@@ -21,7 +21,7 @@ export default function MovieDetailPage({ movies }){
             <div>{ movie.title }</div>
             <div>{date.toLocaleString('default', { month: 'long', day: 'numeric', year:'numeric' })}</div>
             <h4> CastList </h4>
-            <ul className="CastList"><CastList cast={ cast } /></ul>
+            <ul className='CastList'> { cast } </ul>
         </div>        
     )
 }

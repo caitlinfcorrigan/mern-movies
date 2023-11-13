@@ -1,5 +1,6 @@
 import { useParams } from 'react-router';
 import FilmList from './FilmList';
+import './ActorDetailPage.css';
 
 export default function ActorDetailPage({ movies }) {
     const actor = useParams();
@@ -14,8 +15,8 @@ export default function ActorDetailPage({ movies }) {
     return (
         <div>
             <h1>{actor.actor} Details</h1>
-            <ul>
-                <FilmList movie= { actorMovies } />
+            <ul className="MovieList">
+                { actorMovies }
             </ul>
         </div>
 
